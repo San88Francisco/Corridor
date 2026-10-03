@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #070d1a;
+  --color-navy-900: #0b1425;
+  --color-navy-800: #132038;
+  --color-navy-700: #1c2f4f;
+  --color-navy-600: #2a4269;
+  --color-navy-500: #3d5b88;
+
+  --color-accent-50: #fbf7ee;
+  --color-accent-100: #f4ead2;
+  --color-accent-300: #dcc286;
+  --color-accent-500: #c1994a;
+  --color-accent-600: #a67c33;
+  --color-accent-700: #835f26;
+
+  --color-ink-900: #111823;
+  --color-ink-700: #2f3a4a;
+  --color-ink-500: #5c6879;
+  --color-ink-300: #94a0b1;
+  --color-ink-200: #c8d0da;
+  --color-ink-100: #e4e8ee;
+  --color-ink-50: #f4f6f9;
+
+  --color-positive: #1f7a4d;
+  --color-caution: #b3711a;
+  --color-critical: #b3261e;
+
+  --radius-card: 10px;
+
+  --shadow-card: 0 1px 2px rgba(17, 24, 35, 0.06), 0 8px 24px -12px rgba(17, 24, 35, 0.18);
+  --shadow-lift: 0 2px 4px rgba(17, 24, 35, 0.08), 0 16px 40px -16px rgba(17, 24, 35, 0.28);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+}
+
+@layer base {
+  html {
+    /* Без сірого спалаху під пальцем — натискання показують стани active. */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Поки дошка розгорнута на весь екран, сторінка під нею не прокручується. */
+  body:has([data-board-expanded]) {
+    overflow: hidden;
+  }
+}
+
+@utility eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 20px;
+
+  @media (width >= 40rem) {
+    padding-inline: 32px;
+  }
+}
